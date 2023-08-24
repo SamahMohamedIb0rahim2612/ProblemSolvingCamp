@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxNumberOfBalloons(string text) {
+        unordered_map<char, int> charCount;
+    
+    for (char c : text) 
+    {
+        charCount[c]++;
+    }
+    
+    int maxBalloons = INT_MAX;
+    
+    maxBalloons = min(maxBalloons, charCount['b']);
+    maxBalloons = min(maxBalloons, charCount['a']);
+    maxBalloons = min(maxBalloons, charCount['l'] / 2);
+    maxBalloons = min(maxBalloons, charCount['o'] / 2);
+    maxBalloons = min(maxBalloons, charCount['n']);
+    
+    return maxBalloons; 
+    }
+};
